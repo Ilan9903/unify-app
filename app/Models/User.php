@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Link;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,8 +50,8 @@ class User extends Authenticatable
     /**
      * Get the links for the user.
      */
-    public function links(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function links(): HasMany
     {
-        return $this->hasMany(\App\Models\Link::class)->orderBy('order');
+        return $this->hasMany(Link::class)->orderBy('order');
     }
 }
