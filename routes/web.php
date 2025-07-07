@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('dashboard', \App\Livewire\Dashboard::class)
-    ->middleware(['auth'])
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::view('profile', 'profile')
