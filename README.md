@@ -1,61 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Unify App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Unify App est une plateforme web collaborative développée avec Laravel, conçue pour faciliter la gestion de profils publics, la mise en relation et la présentation de liens, de compétences ou de projets. L'application tire parti de Laravel, Livewire et Tailwind CSS pour offrir une expérience utilisateur moderne, interactive et rapide.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Présentation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+L'objectif de Unify App est de permettre à chaque utilisateur de :
+- Créer et personnaliser un profil public (pseudo, bio, etc.).
+- Consulter et rechercher les profils d'autres membres.
+- Mettre en avant ses liens, reséaux, compétences, ses réalisations ou ses projets.
+- Disposer d'un tableau de bord personnel et d'une interface intuitive pour la gestion de ses données.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+La plateforme cible tout particulièrement les étudiants, freelances, professionnels ou toute communauté souhaitant centraliser ses profils en ligne, par exemple pour un réseau d'école, une association ou un incubateur.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Stack technique
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend** : Laravel 11+
+- **Frontend** : Blade, Livewire (composants dynamiques)
+- **CSS** : Tailwind CSS
+- **Base de données** : MySQL ou PostgreSQL
+- **Authentification** : système Laravel natif (inscription, connexion, gestion sessions)
+- **Déploiement** : compatible avec Forge, Vapor, ou tout hébergeur PHP standard
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📦 Structure du projet
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```
+unify-app/
+├── app/
+│   ├── Http/
+│   ├── Livewire/         # Composants Livewire pour l'interactivité
+│   └── Models/
+├── bootstrap/
+├── config/
+├── database/
+│   └── migrations/       # Migrations (utilisateurs, profils, etc.)
+├── public/
+├── resources/
+│   ├── css/              # Styles Tailwind
+│   ├── js/
+│   └── views/            # Vues Blade/Laravel
+├── routes/
+│   └── web.php
+├── tests/
+├── .env.example
+└── README.md
+```
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+## ⚙️ Installation & Lancement
 
-## Contributing
+### Prérequis
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- PHP >= 8.2
+- Composer
+- MySQL ou PostgreSQL
+- Node.js, npm (pour les assets)
 
-## Code of Conduct
+### Étapes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Cloner le dépôt**
+    ```bash
+    git clone https://github.com/Ilan9903/unify-app.git
+    cd unify-app
+    ```
 
-## Security Vulnerabilities
+2. **Installer les dépendances**
+    ```bash
+    composer install
+    npm install && npm run build
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. **Configurer l'environnement**
+    ```bash
+    cp .env.example .env
+    # Modifier les variables (.env) : DB, APP_URL...
+    php artisan key:generate
+    ```
 
-## License
+4. **Créer la base de données**
+    ```bash
+    php artisan migrate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+5. **Lancer le serveur**
+    ```bash
+    php artisan serve
+    ```
+
+6. Accéder à l'application sur [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🧩 Fonctionnalités principales
+
+- **Gestion de profil public**
+    - Pseudo unique, photo, bio personnalisée, informations de contact (optionnelles)
+- **Tableau de bord utilisateur**
+    - Gestion de son profil, aperçu de ses données
+- **Recherche et consultation**
+    - Accès aux profils publics des autres membres (par pseudo ou recherche)
+- **Sécurité & confidentialité**
+    - Authentification, routes protégées, tokens CSRF natifs Laravel
+- **Ergonomie moderne**
+    - UI responsive avec Tailwind CSS et composants dynamiques Livewire
+
+---
+
+## 👨‍💻 Contribuer
+
+Les contributions sont bienvenues !  
+Merci de proposer une issue ou une pull request pour toute amélioration, bug ou suggestion.
+
+---
+
+## 📄 Licence
+
+Ce projet est publié sous licence MIT.
+
+---
+
+**Auteur : [Ilan9903](https://github.com/Ilan9903)**
