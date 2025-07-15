@@ -21,7 +21,7 @@ La plateforme cible tout particulièrement les étudiants, freelances, professio
 - **Backend** : Laravel 11+
 - **Frontend** : Blade, Livewire (composants dynamiques)
 - **CSS** : Tailwind CSS
-- **Base de données** : MySQL ou PostgreSQL
+- **Base de données** : PostgreSQL
 - **Authentification** : système Laravel natif (inscription, connexion, gestion sessions)
 - **Déploiement** : compatible avec Forge, Vapor, ou tout hébergeur PHP standard
 
